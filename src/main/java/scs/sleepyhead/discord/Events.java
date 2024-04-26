@@ -28,7 +28,7 @@ public class Events {
         if (message.getAuthor().isEmpty()) return;
         if (message.getContent().isEmpty()) return;
 
-        if (message.getContent().equals("!ping"))
+        if (message.getContent().equals(";ping"))
             channel.createMessage("pong!").block();
     }
 
