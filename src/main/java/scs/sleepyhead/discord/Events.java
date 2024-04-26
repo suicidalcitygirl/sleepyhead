@@ -22,13 +22,19 @@ public class Events {
     }
 
     public static void onMessageCreateEvent (MessageCreateEvent event) {
+
+        Message message = event.getMessage();
+        MessageChannel channel = message.getChannel().block();
+        if (message.getAuthor().isEmpty()) return;
+        if (message.getContent().isEmpty()) return;
+
+        if (message.getContent().equals("!ping"))
+            channel.createMessage("pong!").block();
     }
 
     public static void onGuildCreateEvent (GuildCreateEvent event) {
     }
 
     public static void onTypingStartEvent (TypingStartEvent event) {
-
-        event.getChannel().block().createMessage("*SHUSH! stop typing " + event.getUser().block().getUsername() + "...*").block();
     }
 }
