@@ -11,6 +11,8 @@ import discord4j.core.event.domain.guild.GuildCreateEvent;
 import discord4j.core.event.domain.channel.TypingStartEvent;
 import discord4j.core.event.domain.lifecycle.ReadyEvent;
 
+import scs.sleepyhead.lang.Phrases;
+
 public class Events {
 
     public static void onReadyEvent (ReadyEvent event) {
@@ -30,6 +32,15 @@ public class Events {
 
         if (message.getContent().equals(";ping"))
             channel.createMessage("pong!").block();
+
+        if (message.getContent().equals(";help"))
+            channel.createMessage("https://www.healthline.com/mental-health").block();
+
+        if (message.getContent().contains("69"))
+            channel.createMessage("nice").block();
+
+        if (message.getContent().contains("I'm sorry, I encountered an error:"))
+            channel.createMessage(Phrases.Insults.atRobot()).block();
     }
 
     public static void onGuildCreateEvent (GuildCreateEvent event) {
