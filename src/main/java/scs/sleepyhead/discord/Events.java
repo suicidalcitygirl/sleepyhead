@@ -36,7 +36,7 @@ public class Events {
         if (message.getContent().equals(";help"))
             channel.createMessage("https://www.healthline.com/mental-health").block();
 
-        if (message.getContent().contains("69"))
+        if (message.getContent().contains(" 69 "))
             channel.createMessage("nice").block();
 
         if (message.getContent().contains("I'm sorry, I encountered an error:"))
