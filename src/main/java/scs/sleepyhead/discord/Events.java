@@ -39,7 +39,10 @@ public class Events {
         if (message.getContent().contains(" 69 "))
             channel.createMessage("nice").block();
 
-        if (message.getContent().contains("I'm sorry, I encountered an error:"))
+        if (
+            message.getContent().contains("I'm sorry, I encountered an error:") ||
+            message.getContent().contains("<function")
+        )
             channel.createMessage(Phrases.Insults.atRobot()).block();
     }
 
